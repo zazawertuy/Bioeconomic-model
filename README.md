@@ -1,5 +1,5 @@
 # Bioeconomic-model
-Code for the article "Public policy design and common property resources: A social network 1 approach".
+Code for the article "Public policy design and common property resources: A social network approach".
 
 Abstract
 
