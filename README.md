@@ -2,6 +2,7 @@
 Code for the article "Public policy design and common property resources: A social network 1 approach".
 
 Abstract
+
 This paper analyzes the influence that social networks and the state of a common property resource have
 on compliance with social norms and signposts the maximum and minimum levels of influence that different
 types of social networks have on cooperation. This allows policymakers to compare the effectiveness of
