@@ -1,0 +1,662 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28235,        654]
+NotebookOptionsPosition[     26951,        621]
+NotebookOutlinePosition[     27471,        640]
+CellTagsIndexPosition[     27428,        637]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["DESCRIPTION OF THE VARIABLES", "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8145523474102583`*^9, 3.814552383959739*^9}, 
+   3.8145563211840167`*^9, {3.814592032373461*^9, 
+   3.814592044679906*^9}},ExpressionUUID->"e3b97496-5b92-4d46-823b-\
+034ded1fa84d"],
+
+Cell["\<\
+For details see the file: Documentation of the Bioeconomic Model.
+
+The model is based on the following reference:
+Reference: Marco, J and R. Goetz, (2022), Public policy design and common \
+property resources: A social network approach. \
+\>", "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8145524049817877`*^9, 3.8145526279473963`*^9}, {
+   3.8145527770095463`*^9, 3.814553097703941*^9}, {3.814553282279214*^9, 
+   3.81455352272505*^9}, {3.814554167391816*^9, 3.8145542236561527`*^9}, {
+   3.8145542660969977`*^9, 3.814554667900735*^9}, {3.814554755628677*^9, 
+   3.81455489306699*^9}, {3.814555074689077*^9, 3.8145550840772924`*^9}, {
+   3.814555159495822*^9, 3.8145551615835333`*^9}, 3.814555238193328*^9, {
+   3.814555414847486*^9, 3.814555588266632*^9}, {3.814555618853782*^9, 
+   3.8145559728266697`*^9}, {3.814556011859619*^9, 3.8145563211850176`*^9}, {
+   3.814592032373461*^9, 3.814592044679906*^9}, {3.825908885263955*^9, 
+   3.8259089208931084`*^9}, {3.8259089715554256`*^9, 
+   3.8259090066435037`*^9}, {3.825909200625841*^9, 3.8259092010987372`*^9}, {
+   3.825910593235021*^9, 3.8259108733253593`*^9}, {3.8259109034648547`*^9, 
+   3.825911054056032*^9}, {3.8259111321510553`*^9, 3.8259111799573545`*^9}, {
+   3.825911580685199*^9, 3.8259116193069773`*^9}, {3.825997441761789*^9, 
+   3.825997527469983*^9}, {3.825997560291259*^9, 3.8259976442112474`*^9}, {
+   3.8259976958404837`*^9, 3.825997699581127*^9}, {3.862296115082888*^9, 
+   3.862296125503083*^9}, 3.8623025941573606`*^9, {3.8623027379249444`*^9, 
+   3.8623028449580464`*^9}, {3.8623028849715977`*^9, 3.862302951404628*^9}, {
+   3.8623058233622246`*^9, 3.862305824429349*^9}, {3.8623058944491544`*^9, 
+   3.8623059394206896`*^9}, {3.862306867606208*^9, 3.862306946546486*^9}, 
+   3.862386523140674*^9},
+ TextJustification->1.,ExpressionUUID->"b490252b-9f9e-4982-a126-d11b5e47f4c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sensititivity Analysis", "Section",
+ FontColor->RGBColor[1, 0, 0]]], "Subsection",
+ CellChangeTimes->{{3.862297973642085*^9, 3.8622979864336877`*^9}, {
+  3.862299045381524*^9, 
+  3.862299065405115*^9}},ExpressionUUID->"9ec87935-3fe7-4bf6-ad66-\
+823c1f5777aa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"ClearAll", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c0N", " ", "=", "1767.29056282179000000"}], ";", " ", 
+  RowBox[{"c1N", "=", "112.23030606845900000"}], ";", " ", 
+  RowBox[{"c2N", "=", 
+   RowBox[{"-", "2.02985230194344000"}]}], ";", " ", 
+  RowBox[{"c3N", "=", "0.01202239070295940"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"d0N", "=", "3694.3548387095100000"}], ";", " ", 
+  RowBox[{"d1N", " ", "=", " ", "3.8709677420480500"}], ";", " ", 
+  RowBox[{"d2N", " ", "=", 
+   RowBox[{"-", "0.0000000000014191"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8622990694702997`*^9, 3.8622990799936423`*^9}, {
+   3.8622991569626837`*^9, 3.8622992311198306`*^9}, {3.8622992809889574`*^9, 
+   3.8622993563518353`*^9}, {3.862299450335677*^9, 3.8622994510528116`*^9}, 
+   3.862299520993374*^9, {3.8622995688245974`*^9, 3.862299595784536*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"7419c6ba-9cd5-467d-9801-8ed7f891f344"],
+
+Cell[BoxData["ClearAll"], "Output",
+ CellChangeTimes->{3.862299759096345*^9, 3.862304775429905*^9, 
+  3.8624643087432766`*^9, 3.862535968888633*^9, 3.862548757987364*^9, 
+  3.8625787751218653`*^9, 3.862740322976829*^9, 3.8629720592529283`*^9, 
+  3.8629932006641855`*^9, 3.863068807443329*^9, 3.863277651232646*^9, 
+  3.8722460232340393`*^9, 3.872246125655347*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"0c05be66-1d41-4e62-9530-b0ea9f5c2ed8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"c", "*", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "c"}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[CapitalUpsilon]", "/", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              RowBox[{"smax", "*", 
+               RowBox[{"Exp", "[", 
+                RowBox[{
+                 RowBox[{"-", 
+                  RowBox[{"(", 
+                   RowBox[{"smax", "-", "s"}], ")"}]}], "*", 
+                 RowBox[{"(", 
+                  RowBox[{"c", "-", 
+                   RowBox[{"(", 
+                    RowBox[{"cf", "-", 
+                    RowBox[{"tauL", "*", 
+                    RowBox[{"c", "^", "2"}]}]}], ")"}]}], ")"}]}], "]"}]}]}], 
+             ")"}]}], "+", "ExtB", "+", " ", "\[Theta]", "-", 
+           RowBox[{"\[Upsilon]", 
+            RowBox[{"(", 
+             RowBox[{"a0", "-", 
+              RowBox[{"a1", "*", "c"}], "+", 
+              RowBox[{"a2", 
+               RowBox[{"(", 
+                RowBox[{"1", "-", "c"}], ")"}], "c"}]}], ")"}]}]}], ")"}]}], "==",
+         "0"}], ",", 
+       RowBox[{"c", "*", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "c"}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"2", "/", 
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             RowBox[{"smax", "*", 
+              RowBox[{"Exp", "[", 
+               RowBox[{
+                RowBox[{"-", 
+                 RowBox[{"(", 
+                  RowBox[{"smax", "-", "s"}], ")"}]}], "*", 
+                RowBox[{"(", 
+                 RowBox[{"c", "-", 
+                  RowBox[{"(", 
+                   RowBox[{"cf", "-", 
+                    RowBox[{"tauU", "*", 
+                    RowBox[{"c", "^", "2"}]}]}], ")"}]}], ")"}]}], "]"}]}]}], 
+            ")"}]}], "+", "ExtB", "+", " ", "\[Theta]", "-", 
+          RowBox[{"\[Upsilon]", 
+           RowBox[{"(", 
+            RowBox[{"a0", "-", 
+             RowBox[{"a1", "*", "c"}], "+", 
+             RowBox[{"a2", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", "c"}], ")"}], "c"}]}], ")"}]}]}], ")"}]}], 
+       ",", 
+       RowBox[{
+        RowBox[{"\[Mu]", "*", "n", 
+         RowBox[{"(", 
+          RowBox[{"R", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "c"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "\[Psi]"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"d0N", "+", 
+              RowBox[{"d1N", "*", "s"}], " ", "+", 
+              RowBox[{"d2N", "*", 
+               RowBox[{"s", "^", "2"}]}]}], ")"}]}], "-", 
+           RowBox[{"c", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "\[Psi]"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"c0N", "+", 
+              RowBox[{"c1N", "*", "s"}], "+", 
+              RowBox[{"c2N", "*", 
+               RowBox[{"s", "^", "2"}]}], "+", 
+              RowBox[{"c3N", "*", 
+               RowBox[{"s", "^", "3"}]}]}], ")"}]}]}], ")"}]}], "==", "0"}]}],
+       "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", 
+       RowBox[{"-", "0.3"}], ",", "1.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "0", ",", "160"}], "}"}], ",", " ", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Hue", "[", "0.9", "]"}], ",", 
+        RowBox[{"Hue", "[", "0.1", "]"}], ",", 
+        RowBox[{"Hue", "[", "0.5", "]"}]}], "}"}]}], ",", 
+     RowBox[{"ContourLabels", "\[Rule]", " ", "All"}], ",", " ", 
+     RowBox[{"ContourShading", "\[Rule]", "None"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<\!\(\*OverscriptBox[\"c\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline,\[Tau]=tauL\>\"", ",", 
+          "14", ",", "Black"}], "]"}], ",", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<\!\(\*OverscriptBox[\"c\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline,\[Tau]=tauU\>\"", ",", 
+          "14", ",", "Black"}], "]"}], ",", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<\!\(\*OverscriptBox[\"s\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline\>\"", ",", "14", ",", 
+          "Black"}], "]"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Epilog", "\[Rule]", 
+      RowBox[{"First", "@", 
+       RowBox[{"VectorPlot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"c", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "c"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[CapitalUpsilon]", "/", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", 
+                 RowBox[{"smax", "*", 
+                  RowBox[{"Exp", "[", 
+                   RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"smax", "-", "s"}], ")"}]}], "*", 
+                    RowBox[{"(", 
+                    RowBox[{"c", "-", 
+                    RowBox[{"(", 
+                    RowBox[{"cf", "-", 
+                    RowBox[{"tauL", "*", 
+                    RowBox[{"c", "^", "2"}]}]}], ")"}]}], ")"}]}], "]"}]}]}], 
+                ")"}]}], "+", "ExtB", "+", " ", "\[Theta]", "-", 
+              RowBox[{"\[Upsilon]", 
+               RowBox[{"(", 
+                RowBox[{"a0", "-", 
+                 RowBox[{"a1", "*", "c"}], "+", 
+                 RowBox[{"a2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "-", "c"}], ")"}], "c"}]}], ")"}]}]}], 
+             ")"}]}], ",", 
+           RowBox[{"\[Mu]", "*", "n", 
+            RowBox[{"(", 
+             RowBox[{"R", "-", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"1", "-", "c"}], ")"}], "*", 
+               RowBox[{"(", 
+                RowBox[{"1", "-", "\[Psi]"}], ")"}], "*", 
+               RowBox[{"(", 
+                RowBox[{"d0N", "+", 
+                 RowBox[{"d1N", "*", "s"}], " ", "+", 
+                 RowBox[{"d2N", "*", 
+                  RowBox[{"s", "^", "2"}]}]}], ")"}]}], "-", 
+              RowBox[{"c", "*", 
+               RowBox[{"(", 
+                RowBox[{"1", "-", "\[Psi]"}], ")"}], "*", 
+               RowBox[{"(", 
+                RowBox[{"c0N", "+", 
+                 RowBox[{"c1N", "*", "s"}], "+", 
+                 RowBox[{"c2N", "*", 
+                  RowBox[{"s", "^", "2"}]}], "+", 
+                 RowBox[{"c3N", "*", 
+                  RowBox[{"s", "^", "3"}]}]}], ")"}]}]}], ")"}]}]}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"c", ",", 
+           RowBox[{"-", "0.3"}], ",", "1.5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"s", ",", "0", ",", "160"}], "}"}], ",", " ", 
+         RowBox[{"VectorPoints", "\[Rule]", "Fine"}]}], "]"}]}]}], ",", 
+     RowBox[{"FrameLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<Remaining Stock in m.\>\"", ",", "None"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Share of Compliers\>\"", ",", "None"}], "}"}]}], 
+       "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", " ", "None"}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", 
+      RowBox[{"{", 
+       InterpretationBox[
+        ButtonBox[
+         TooltipBox[
+          GraphicsBox[{
+            {GrayLevel[0], RectangleBox[{0, 0}]}, 
+            {GrayLevel[0], RectangleBox[{1, -1}]}, 
+            {GrayLevel[0.03], RectangleBox[{0, -1}, {2, 1}]}},
+           AspectRatio->1,
+           DefaultBaseStyle->"ColorSwatchGraphics",
+           Frame->True,
+           FrameStyle->GrayLevel[0.02],
+           FrameTicks->None,
+           
+           ImageSize->
+            Dynamic[{
+             Automatic, 
+              1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+               Magnification])}],
+           PlotRangePadding->None],
+          StyleBox[
+           RowBox[{"GrayLevel", "[", "0.03`", "]"}], NumberMarks -> False]],
+         Appearance->None,
+         BaseStyle->{},
+         BaselinePosition->Baseline,
+         ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+           If[
+            Not[
+             AbsoluteCurrentValue["Deployed"]], 
+            SelectionMove[Typeset`box$, All, Expression]; 
+            FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+            FrontEnd`Private`$ColorSelectorInitialColor = GrayLevel[0.03]; 
+            FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+            MathLink`CallFrontEnd[
+              FrontEnd`AttachCell[Typeset`box$, 
+               FrontEndResource["GrayLevelColorValueSelector"], {
+               0, {Left, Bottom}}, {Left, Top}, 
+               "ClosingActions" -> {
+                "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+         DefaultBaseStyle->{},
+         Evaluator->Automatic,
+         Method->"Preemptive"],
+        GrayLevel[0.03],
+        Editable->False,
+        Selectable->False], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"R", ",", "2900"}], "}"}], ",", "290", ",", "6000", ",", 
+     "290"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Mu]", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "10"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "9"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "8"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "7"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "6"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "5"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "4"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "4"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "3"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "2"}]]}], ",", 
+       RowBox[{"9.0", "*", 
+        SuperscriptBox["10", 
+         RowBox[{"-", "1"}]]}]}], "}"}]}], " ", "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tauL", ",", "0.1"}], "}"}], ",", "0.0", ",", " ", "1", ",", 
+     " ", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tauU", ",", "1"}], "}"}], ",", "0.0", ",", " ", "1", ",", " ", 
+     "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"cf", ",", "0.4"}], "}"}], ",", "0.0", ",", "0.8", ",", " ", 
+     "0.04"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Upsilon]", ",", "0.62"}], "}"}], ",", "0", ",", "1.2", ",", 
+     "0.062"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a0", ",", "1"}], "}"}], ",", "0", ",", "5", ",", "0.25"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a1", ",", "1"}], "}"}], ",", "0", ",", "5", ",", "0.25"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a2", ",", "0"}], "}"}], ",", "0", ",", "6", ",", "0.25"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "0"}], "}"}], ",", "0", ",", " ", "1", ",", 
+     "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"smax", ",", "80"}], "}"}], ",", "0", ",", "160", ",", "8"}], 
+    "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ExtB", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"-", "1.9"}], ",", "5", ",", "0.1"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Psi]", ",", "0.2"}], "}"}], ",", "0.0", ",", "0.5", ",", 
+     "0.02"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "7500"}], "}"}], ",", "5000", ",", "15000", ",", 
+     "750"}], "}"}], " ", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[CapitalUpsilon]", ",", "2"}], "}"}], ",", "0", ",", "5", ",",
+      "0.2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8622988794343*^9, 3.862299034104638*^9}, {
+   3.8622993702028627`*^9, 3.862299513766711*^9}, {3.862299686665615*^9, 
+   3.8622997247597895`*^9}, {3.8623000170007343`*^9, 3.862300061406582*^9}, {
+   3.862302245060755*^9, 3.8623022941058717`*^9}, {3.862302433969784*^9, 
+   3.8623024568823037`*^9}, 3.862302495694798*^9, {3.8623034667990055`*^9, 
+   3.862303512752556*^9}, {3.862303546007521*^9, 3.862303586502962*^9}, {
+   3.862303887452489*^9, 3.8623038895568447`*^9}, {3.862303923538593*^9, 
+   3.8623040498997183`*^9}, {3.8623040891671715`*^9, 3.862304100736226*^9}, {
+   3.8623041438581676`*^9, 3.862304145771048*^9}, {3.862304234761984*^9, 
+   3.8623043092024555`*^9}, {3.8623045783795424`*^9, 3.862304602494499*^9}, {
+   3.862304668954445*^9, 3.862304749706417*^9}, {3.862304841438075*^9, 
+   3.862304851182995*^9}, {3.8623069806158056`*^9, 3.8623070668930836`*^9}, {
+   3.8623071315815296`*^9, 3.862307192427981*^9}, {3.8623072242078466`*^9, 
+   3.862307261020441*^9}, {3.862464259746684*^9, 3.8624642985625353`*^9}, {
+   3.862537495704864*^9, 3.862537496349931*^9}, {3.8625375297391787`*^9, 
+   3.862537551373104*^9}, {3.862537624719872*^9, 3.86253762555464*^9}, {
+   3.862537660989443*^9, 3.8625376621789007`*^9}, {3.862537720644758*^9, 
+   3.8625377234528303`*^9}, {3.862537754917349*^9, 3.8625378138085337`*^9}, {
+   3.862538237072673*^9, 3.862538246084412*^9}, {3.8625383065851173`*^9, 
+   3.862538329361278*^9}, {3.862538376094226*^9, 3.862538378437256*^9}, {
+   3.862538475156866*^9, 3.8625384988744793`*^9}, {3.8625385946163387`*^9, 
+   3.8625386878401947`*^9}, 3.8625487815776777`*^9, {3.8625506306856594`*^9, 
+   3.8625506313498726`*^9}, 3.862551425889036*^9, {3.8625680429116783`*^9, 
+   3.862568069439483*^9}, 3.8625681790241795`*^9, {3.8625690377665176`*^9, 
+   3.8625690384676256`*^9}, 3.8625700172994666`*^9, {3.8625788181962233`*^9, 
+   3.862578878368578*^9}, {3.8625793065285187`*^9, 3.86257935674356*^9}, {
+   3.862579742324317*^9, 3.862579743286601*^9}, {3.862580482866111*^9, 
+   3.8625804835523233`*^9}, {3.862584714550028*^9, 3.862584753797615*^9}, {
+   3.8629719710883784`*^9, 3.862972015707711*^9}, {3.8629720480911436`*^9, 
+   3.8629720492480135`*^9}, {3.8630691409674964`*^9, 3.863069146469321*^9}, {
+   3.863084133545526*^9, 3.863084146585634*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"4b976458-bbf5-4650-a2ca-020bd334e61b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a0$$ = 1, $CellContext`a1$$ = 
+    1, $CellContext`a2$$ = 0, $CellContext`cf$$ = 
+    0.4, $CellContext`ExtB$$ = -1, $CellContext`n$$ = 7500, $CellContext`R$$ =
+     2900, $CellContext`smax$$ = 80, $CellContext`tauL$$ = 
+    0.1, $CellContext`tauU$$ = 1, $CellContext`\[Theta]$$ = 
+    0, $CellContext`\[Mu]$$ = 9.*^-10, $CellContext`\[Upsilon]$$ = 
+    0.62, $CellContext`\[CapitalUpsilon]$$ = 2, $CellContext`\[Psi]$$ = 0.2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`R$$], 2900}, 290, 6000, 290}, {
+      Hold[$CellContext`\[Mu]$$], {9.*^-10, 9.000000000000001*^-9, 9.*^-8, 
+      9.*^-7, 9.*^-6, 0.00009, 0.0009000000000000001, 0.0009000000000000001, 
+      0.009000000000000001, 0.09, 0.9}}, {{
+       Hold[$CellContext`tauL$$], 0.1}, 0., 1, 0.1}, {{
+       Hold[$CellContext`tauU$$], 1}, 0., 1, 0.1}, {{
+       Hold[$CellContext`cf$$], 0.4}, 0., 0.8, 0.04}, {{
+       Hold[$CellContext`\[Upsilon]$$], 0.62}, 0, 1.2, 0.062}, {{
+       Hold[$CellContext`a0$$], 1}, 0, 5, 0.25}, {{
+       Hold[$CellContext`a1$$], 1}, 0, 5, 0.25}, {{
+       Hold[$CellContext`a2$$], 0}, 0, 6, 0.25}, {{
+       Hold[$CellContext`\[Theta]$$], 0}, 0, 1, 0.1}, {{
+       Hold[$CellContext`smax$$], 80}, 0, 160, 8}, {{
+       Hold[$CellContext`ExtB$$], -1}, -1.9, 5, 0.1}, {{
+       Hold[$CellContext`\[Psi]$$], 0.2}, 0., 0.5, 0.02}, {{
+       Hold[$CellContext`n$$], 7500}, 5000, 15000, 750}, {{
+       Hold[$CellContext`\[CapitalUpsilon]$$], 2}, 0, 5, 0.2}}, 
+    Typeset`size$$ = {517., {175., 180.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a0$$ = 1, $CellContext`a1$$ = 
+        1, $CellContext`a2$$ = 0, $CellContext`cf$$ = 
+        0.4, $CellContext`ExtB$$ = -1, $CellContext`n$$ = 
+        7500, $CellContext`R$$ = 2900, $CellContext`smax$$ = 
+        80, $CellContext`tauL$$ = 0.1, $CellContext`tauU$$ = 
+        1, $CellContext`\[Theta]$$ = 0, $CellContext`\[Mu]$$ = 
+        9.*^-10, $CellContext`\[Upsilon]$$ = 
+        0.62, $CellContext`\[CapitalUpsilon]$$ = 2, $CellContext`\[Psi]$$ = 
+        0.2}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot[{$CellContext`c (
+           1 - $CellContext`c) ($CellContext`\[CapitalUpsilon]$$/(
+            1 + $CellContext`smax$$ 
+             Exp[(-($CellContext`smax$$ - $CellContext`s)) ($CellContext`c - \
+($CellContext`cf$$ - $CellContext`tauL$$ $CellContext`c^2))]) + \
+$CellContext`ExtB$$ + $CellContext`\[Theta]$$ - $CellContext`\[Upsilon]$$ \
+($CellContext`a0$$ - $CellContext`a1$$ $CellContext`c + $CellContext`a2$$ (
+              1 - $CellContext`c) $CellContext`c)) == 
+         0, $CellContext`c (1 - $CellContext`c) (
+          2/(1 + $CellContext`smax$$ 
+            Exp[(-($CellContext`smax$$ - $CellContext`s)) ($CellContext`c - \
+($CellContext`cf$$ - $CellContext`tauU$$ $CellContext`c^2))]) + \
+$CellContext`ExtB$$ + $CellContext`\[Theta]$$ - $CellContext`\[Upsilon]$$ \
+($CellContext`a0$$ - $CellContext`a1$$ $CellContext`c + $CellContext`a2$$ (
+             1 - $CellContext`c) $CellContext`c)), $CellContext`\[Mu]$$ \
+$CellContext`n$$ ($CellContext`R$$ - (1 - $CellContext`c) (
+            1 - $CellContext`\[Psi]$$) ($CellContext`d0N + $CellContext`d1N \
+$CellContext`s + $CellContext`d2N $CellContext`s^2) - $CellContext`c (
+            1 - $CellContext`\[Psi]$$) ($CellContext`c0N + $CellContext`c1N \
+$CellContext`s + $CellContext`c2N $CellContext`s^2 + $CellContext`c3N \
+$CellContext`s^3)) == 0}, {$CellContext`c, -0.3, 1.5}, {$CellContext`s, 0, 
+         160}, ContourStyle -> {
+          Hue[0.9], 
+          Hue[0.1], 
+          Hue[0.5]}, ContourLabels -> All, ContourShading -> None, 
+        PlotLegends -> {
+          Style[
+          "\!\(\*OverscriptBox[\"c\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline,\[Tau]=tauL", 14, Black], 
+          Style[
+          "\!\(\*OverscriptBox[\"c\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline,\[Tau]=tauU", 14, Black], 
+          Style[
+          "\!\(\*OverscriptBox[\"s\", \
+StyleBox[\"\[CenterDot]\",FontSize->14]]\)-nullcline", 14, Black]}, Epilog -> 
+        First[
+          
+          VectorPlot[{$CellContext`c (
+             1 - $CellContext`c) ($CellContext`\[CapitalUpsilon]$$/(
+              1 + $CellContext`smax$$ 
+               Exp[(-($CellContext`smax$$ - $CellContext`s)) ($CellContext`c - \
+($CellContext`cf$$ - $CellContext`tauL$$ $CellContext`c^2))]) + \
+$CellContext`ExtB$$ + $CellContext`\[Theta]$$ - $CellContext`\[Upsilon]$$ \
+($CellContext`a0$$ - $CellContext`a1$$ $CellContext`c + $CellContext`a2$$ (
+                1 - $CellContext`c) $CellContext`c)), $CellContext`\[Mu]$$ \
+$CellContext`n$$ ($CellContext`R$$ - (1 - $CellContext`c) (
+              1 - $CellContext`\[Psi]$$) ($CellContext`d0N + $CellContext`d1N \
+$CellContext`s + $CellContext`d2N $CellContext`s^2) - $CellContext`c (
+              1 - $CellContext`\[Psi]$$) ($CellContext`c0N + $CellContext`c1N \
+$CellContext`s + $CellContext`c2N $CellContext`s^2 + $CellContext`c3N \
+$CellContext`s^3))}, {$CellContext`c, -0.3, 1.5}, {$CellContext`s, 0, 160}, 
+           VectorPoints -> Fine]], 
+        FrameLabel -> {{"Remaining Stock in m.", None}, {
+          "Share of Compliers", None}}, PlotLabel -> None, LabelStyle -> {
+          GrayLevel[0.03]}], 
+      "Specifications" :> {{{$CellContext`R$$, 2900}, 290, 6000, 
+         290}, {$CellContext`\[Mu]$$, {9.*^-10, 9.000000000000001*^-9, 9.*^-8,
+          9.*^-7, 9.*^-6, 0.00009, 0.0009000000000000001, 
+         0.0009000000000000001, 0.009000000000000001, 0.09, 
+         0.9}}, {{$CellContext`tauL$$, 0.1}, 0., 1, 
+         0.1}, {{$CellContext`tauU$$, 1}, 0., 1, 
+         0.1}, {{$CellContext`cf$$, 0.4}, 0., 0.8, 
+         0.04}, {{$CellContext`\[Upsilon]$$, 0.62}, 0, 1.2, 
+         0.062}, {{$CellContext`a0$$, 1}, 0, 5, 
+         0.25}, {{$CellContext`a1$$, 1}, 0, 5, 0.25}, {{$CellContext`a2$$, 0},
+          0, 6, 0.25}, {{$CellContext`\[Theta]$$, 0}, 0, 1, 
+         0.1}, {{$CellContext`smax$$, 80}, 0, 160, 
+         8}, {{$CellContext`ExtB$$, -1}, -1.9, 5, 
+         0.1}, {{$CellContext`\[Psi]$$, 0.2}, 0., 0.5, 
+         0.02}, {{$CellContext`n$$, 7500}, 5000, 15000, 
+         750}, {{$CellContext`\[CapitalUpsilon]$$, 2}, 0, 5, 0.2}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{802., {206.13403309800196`, 211.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8722461257351613`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"ac788af9-4743-42d0-972b-33a0d63e7892"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1920., 1017.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+PrivateNotebookOptions->{"CloudPublishPath"->"/Published/AJAE Bioeconomic \
+model.nb"},
+FrontEndVersion->"13.1 para Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c209602e-921e-4dd6-9e84-ef1bfb4e9014"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 302, 5, 35, "Text",ExpressionUUID->"e3b97496-5b92-4d46-823b-034ded1fa84d",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[885, 29, 1901, 29, 104, "Text",ExpressionUUID->"b490252b-9f9e-4982-a126-d11b5e47f4c1",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2823, 63, 283, 5, 64, "Subsection",ExpressionUUID->"9ec87935-3fe7-4bf6-ad66-823c1f5777aa"],
+Cell[CellGroupData[{
+Cell[3131, 72, 926, 16, 83, "Input",ExpressionUUID->"7419c6ba-9cd5-467d-9801-8ed7f891f344"],
+Cell[4060, 90, 441, 6, 32, "Output",ExpressionUUID->"0c05be66-1d41-4e62-9530-b0ea9f5c2ed8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4538, 101, 14934, 382, 261, "Input",ExpressionUUID->"4b976458-bbf5-4650-a2ca-020bd334e61b"],
+Cell[19475, 485, 7448, 132, 460, "Output",ExpressionUUID->"ac788af9-4743-42d0-972b-33a0d63e7892"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
